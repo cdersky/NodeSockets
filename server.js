@@ -33,4 +33,7 @@ var server = http.createServer(function(request, response){
 
 server.listen(8080);
 
-io.listen(server);
+var listener = io.listen(server);
+listener.sockets.on('connection', function(socket){
+  socket.emit('message', {'message': 'its the socket. i heard a connection and I\'m emmiting this message.'});
+});

@@ -8,6 +8,9 @@
 sockets will rain down here
 <script>
   var socket = io.connect();
+  socket.on('message', function (data) {
+    console.log(data.message)
+  })
 </script>
 </body>
 </html>
