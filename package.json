@@ -1,0 +1,32 @@
+{
+  "name": "nodesocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdersky/NodeSockets.git"
+  },
+  "keywords": [
+    "node",
+    "sockets",
+    "javascript",
+    "server",
+    "client",
+    "send",
+    "data"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdersky/NodeSockets/issues"
+  },
+  "homepage": "https://github.com/cdersky/NodeSockets#readme",
+  "dependencies": {
+    "socket.io": "^1.4.7"
+  }
+}
