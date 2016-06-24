@@ -6,11 +6,17 @@
 </head>
 <body>
 sockets will rain down here
+<h1 id="time"></h1>
 <script>
   var socket = io.connect();
+  
   socket.on('message', function (data) {
-    console.log(data.message)
-  })
+    console.log(data.message);
+  });
+
+  socket.on('date', function(data){
+    document.querySelector('#time').textContent = data.date;
+  });
 </script>
 </body>
 </html>

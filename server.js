@@ -35,5 +35,8 @@ server.listen(8080);
 
 var listener = io.listen(server);
 listener.sockets.on('connection', function(socket){
-  socket.emit('message', {'message': 'its the socket. i heard a connection and I\'m emmiting this message.'});
+  // socket.emit('message', {'message': 'its the socket. i heard a connection and I\'m emmiting this message.'});
+  setInterval(function(){
+    socket.emit('date', {'date': new Date()});
+  }, 1000);
 });
