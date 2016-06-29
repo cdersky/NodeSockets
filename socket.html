@@ -4,19 +4,35 @@
   <title></title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.7/socket.io.js"></script>
 </head>
-<body>
-sockets will rain down here
-<h1 id="time"></h1>
-<script>
-  var socket = io.connect();
-  
-  socket.on('message', function (data) {
-    console.log(data.message);
-  });
+  <body>
+    sockets will rain down here
+    <h1 id="time"></h1>
+    <script>
+    // display info from server
+    var socket = io.connect();
+    
+    socket.on('message', function (data) {
+      console.log(data.message);
+    });
 
-  socket.on('date', function(data){
-    document.querySelector('#time').textContent = data.date;
-  });
-</script>
-</body>
+    socket.on('date', function(data){
+      document.querySelector('#time').textContent = data.date;
+    });
+    </script>
+
+    <textarea id='text' onkeypress='log()'></textarea>
+<!--     send info from client to server -->
+    <script >
+
+      function log (d){
+        console.log(document.querySelector('#text').value);
+        socket.emit('client_data', {'letter': document.querySelector('#text').value});        
+      }
+
+
+
+    </script>
+
+
+  </body>
 </html>
